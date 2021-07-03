@@ -47,7 +47,8 @@ class _MainScreenState extends State<MainScreen> {
             content: AzkarAppText(
               text: getRandomZeker(),
               fontSize: SizeConfig.scaleTextFont(24),
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.justify,
+              height: 1.5,
             ),
             actions: <Widget>[
               SizedBox(
