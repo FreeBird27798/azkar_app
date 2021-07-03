@@ -72,8 +72,8 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                 increaseCounter();
               },
               child: Container(
-                width: SizeConfig.scaleWidth(200),
-                height: SizeConfig.scaleHeight(200),
+                width: SizeConfig.scaleWidth(300),
+                height: SizeConfig.scaleHeight(300),
                 decoration: BoxDecoration(
                   color: AppColors.GRADIENT_BEGIN_COLOR,
                   boxShadow: [
