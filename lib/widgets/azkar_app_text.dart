@@ -29,12 +29,11 @@ class AzkarAppText extends StatelessWidget {
       overflow: TextOverflow.fade,
       // maxLines: 1,
       style: TextStyle(
-        color: textColor,
-//        fontFamily: fontFamily,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        height: height
-      ),
+          color: textColor,
+          fontFamily: fontFamily,
+          fontWeight: fontWeight,
+          fontSize: fontSize,
+          height: height),
     );
   }
 }

@@ -68,6 +68,8 @@ class OnBoardingContent extends StatelessWidget {
             textAlign: messageTextAlign,
             fontWeight: FontWeight.w300,
             fontSize: SizeConfig.scaleTextFont(17),
+            height: 1.5,
+
             // fontSize: 17,
           ),
         ],

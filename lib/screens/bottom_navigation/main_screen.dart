@@ -1,3 +1,4 @@
+import 'package:azkar_app/change_notifiers/tasbeeh_change_notifier.dart';
 import 'package:azkar_app/storage/app_pref_controller.dart';
 import 'package:azkar_app/utils/app_colors.dart';
 import 'package:azkar_app/utils/size_config.dart';
@@ -22,10 +23,13 @@ class _MainScreenState extends State<MainScreen> {
   String _title = 'الأذكار';
 
   List<BottomNavigationScreen> _screens = <BottomNavigationScreen>[
-    BottomNavigationScreen(title: 'الأذكار', widget: AzkarScreen()),
-    BottomNavigationScreen(title: 'المسبحة', widget: TasbeehScreen()),
+    BottomNavigationScreen(
+        title: 'الأذكار', title_en: 'Prayers', widget: AzkarScreen()),
+    BottomNavigationScreen(
+        title: 'المسبحة', title_en: 'Rosary', widget: TasbeehScreen()),
     BottomNavigationScreen(
         title: 'الإعدادات',
+        title_en: 'Settings',
         widget: SettingsScreen(AppPrefController().isShowing)),
   ];
 
@@ -77,7 +81,8 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
           appBar: AppBar(
             title: Text(
-              _screens.elementAt(_selectedItemIndex).title,
+              TasbeehChangeNotifier()
+                  .getNavTitle(index: _selectedItemIndex, screens: _screens),
             ),
           ),
           drawer: Drawer(
@@ -114,22 +119,6 @@ class _MainScreenState extends State<MainScreen> {
                     Navigator.pushNamed(context, '/about_app_screen');
                   },
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.settings,
-                    color: AppColors.APP_PRIMARY_COLOR,
-                  ),
-                  title: AzkarAppText(
-                      text: AppLocalizations.of(context)!.settings),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    color: AppColors.APP_PRIMARY_COLOR,
-                  ),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, '/settings_screen');
-                  },
-                ),
               ],
             ),
           ),
@@ -150,22 +139,16 @@ class _MainScreenState extends State<MainScreen> {
             },
             type: BottomNavigationBarType.fixed,
             backgroundColor: AppColors.GRADIENT_BEGIN_COLOR,
-
             showUnselectedLabels: true,
             showSelectedLabels: true,
-
             selectedItemColor: Colors.white,
             unselectedItemColor: AppColors.GRADIENT_END_COLOR,
-
             selectedIconTheme: IconThemeData(color: Colors.white),
             unselectedIconTheme:
                 IconThemeData(color: AppColors.GRADIENT_END_COLOR),
-
             selectedLabelStyle: TextStyle(fontWeight: FontWeight.w500),
             unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-
             elevation: 4,
-
             items: [
               BottomNavigationBarItem(
                   icon: ImageIcon(

@@ -73,13 +73,14 @@ class _ZekerScreenState extends State<ZekerScreen> {
                       thickness: 2,
                       child: SingleChildScrollView(
                         child: AzkarAppText(
-                          textAlign: TextAlign.justify,
-                          text: '{{ ${widget.list[index].zekerText} }}',
-                          fontWeight: FontWeight.bold,
-                          fontSize: SizeConfig.scaleTextFont(30),
-                          textColor: AppColors.GRADIENT_END_COLOR,
-                        ),
+                        textAlign: TextAlign.start,
+                        text: '{{ ${widget.list[index].zekerText} }}',
+                        fontWeight: FontWeight.bold,
+                        fontSize: SizeConfig.scaleTextFont(30),
+                        textColor: AppColors.GRADIENT_END_COLOR,
+                        height: 2,
                       ),
+                    ),
                     ),
                   ),
                 Padding(
@@ -91,6 +92,8 @@ class _ZekerScreenState extends State<ZekerScreen> {
                           text: ' ${widget.list[index].count}',
                           fontSize: SizeConfig.scaleTextFont(50),
                           textColor: AppColors.GRADIENT_END_COLOR,
+                          fontFamily: 'Technology',
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                       Expanded(
@@ -114,8 +117,9 @@ class _ZekerScreenState extends State<ZekerScreen> {
                             child: AzkarAppText(
                               text: '$_counter',
                               fontSize: SizeConfig.scaleTextFont(35),
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w700,
                               textColor: AppColors.APP_PRIMARY_COLOR_SHADE_50,
+                              fontFamily: 'Technology',
                             ),
                             minRadius: 50,
                             backgroundColor: AppColors.GRADIENT_BEGIN_COLOR,
@@ -124,9 +128,11 @@ class _ZekerScreenState extends State<ZekerScreen> {
                       ),
                       Expanded(
                         child: AzkarAppText(
-                          text: '${widget.list.length} -- ${_currentPage + 1}',
+                          text: '${widget.list.length} - ${_currentPage + 1}',
                           fontSize: SizeConfig.scaleTextFont(35),
                           textColor: AppColors.GRADIENT_END_COLOR,
+                          fontFamily: 'Technology',
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
                     ],

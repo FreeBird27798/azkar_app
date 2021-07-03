@@ -17,8 +17,15 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
   String _alZeker = 'أستغفر الله';
 
   @override
+  void initState() {
+    // TODO: implement initState
+    // _alZeker = Provider.of<TasbeehChangeNotifier>(context, listen: true)
+    //     .getDefaultForgiveness(context);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // _alZeker = AppLocalizations.of(context)!.forgiveness_from_allah;
     return Padding(
       padding: EdgeInsetsDirectional.only(
         start: SizeConfig.scaleWidth(15),
@@ -44,10 +51,18 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                 ),
                 shape: BoxShape.rectangle,
               ),
-              child: AzkarAppText(
+              child:
+                  // Consumer<TasbeehChangeNotifier>(
+                  //     builder: (BuildContext context,
+                  //         TasbeehChangeNotifier value,
+                  //         Widget? child,) {
+                  //       return
+                  AzkarAppText(
                 text: _alZeker,
                 fontSize: SizeConfig.scaleTextFont(30),
               ),
+              //   );
+              // }),
             ),
             SizedBox(
               height: SizeConfig.scaleHeight(20),
@@ -71,20 +86,17 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                   shape: BoxShape.circle,
                 ),
                 child: Center(
-                  child: Text(
-                    '$_counter',
-                   style:TextStyle(
-                     fontSize: SizeConfig.scaleTextFont(70),
-                     color: AppColors.GRADIENT_END_COLOR,
-                     fontFamily: 'Technology',
-                     fontWeight: FontWeight.w700,
-                   )
-                  ),
+                  child: Text('$_counter',
+                      style: TextStyle(
+                        fontSize: SizeConfig.scaleTextFont(70),
+                        color: AppColors.GRADIENT_END_COLOR,
+                        fontFamily: 'Technology',
+                        fontWeight: FontWeight.w700,
+                      )),
                 ),
                 // ),
               ),
             ),
-
             SizedBox(
               height: SizeConfig.scaleHeight(20),
             ),
@@ -101,7 +113,8 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
           onSelected: (int selectedItem) {
             switch (selectedItem) {
               case 1:
-                changeContent(AppLocalizations.of(context)!.forgiveness_from_allah);
+                changeContent(
+                    AppLocalizations.of(context)!.forgiveness_from_allah);
                 break;
               case 2:
                 changeContent(AppLocalizations.of(context)!.glory_to_allah);
@@ -113,7 +126,8 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                 changeContent(AppLocalizations.of(context)!.no_god_but_allah);
                 break;
               case 5:
-                changeContent(AppLocalizations.of(context)!.allah_is_the_greatest);
+                changeContent(
+                    AppLocalizations.of(context)!.allah_is_the_greatest);
                 break;
             }
           },

@@ -26,7 +26,8 @@ class AboutCard extends StatelessWidget {
           text: AppLocalizations.of(context)!.description,
           fontWeight: FontWeight.w400,
           fontSize: SizeConfig.scaleTextFont(18),
-          textAlign: TextAlign.start,
+          textAlign: TextAlign.justify,
+          height: 1.5,
         ),
 
       ],

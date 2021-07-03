@@ -1,5 +1,4 @@
 import 'package:azkar_app/screens/bottom_navigation/settings_screen.dart';
-import 'package:azkar_app/utils/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,7 +8,6 @@ import 'screens/launch_screen.dart';
 import 'screens/on_boarding/on_boarding_screen.dart';
 import 'package:azkar_app/storage/app_pref_controller.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import 'utils/app_colors.dart';
 
 void main() async {
@@ -57,7 +55,13 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return
+        // MultiProvider(
+        // providers: [
+        //   Provider<TasbeehChangeNotifier>(create: (_) => TasbeehChangeNotifier()),
+        // ],
+        // child:
+        MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.APP_PRIMARY_COLOR_SHADE_50,
         appBarTheme: AppBarTheme(
@@ -96,5 +100,6 @@ class _MyAppState extends State<MyApp> {
         Locale("en", "US"),
       ],
     );
+    // );
   }
 }

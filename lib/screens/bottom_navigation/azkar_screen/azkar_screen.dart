@@ -1,3 +1,4 @@
+import 'package:azkar_app/change_notifiers/tasbeeh_change_notifier.dart';
 import 'package:azkar_app/screens/bottom_navigation/azkar_screen/azkar_sub_screen.dart';
 import 'package:azkar_app/utils/app_colors.dart';
 import 'package:azkar_app/utils/azkar.dart';
@@ -31,7 +32,9 @@ class _AzkarScreenState extends State<AzkarScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => AzkarSubScreen(
-                      categories[index].list, categories[index].catName),
+                      categories[index].list,
+                      TasbeehChangeNotifier()
+                          .getCatName(index: index, categories: categories)),
                 ));
           },
           child: Card(
@@ -63,18 +66,20 @@ class _AzkarScreenState extends State<AzkarScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(1.0),
                     child: AzkarAppText(
-                      text: '${categories[index].catName}',
+                      text:
+                          '${TasbeehChangeNotifier().getCatName(index: index, categories: categories)}',
                       fontSize: SizeConfig.scaleTextFont(18),
                       fontWeight: FontWeight.bold,
                       height: 0.9,
                     ),
                   ),
                 ),
-
                 AzkarAppText(
                   text: AppLocalizations.of(context)!.count_of_prayers +
                       '${categories[index].list.length}',
                   textColor: AppColors.GRADIENT_BEGIN_COLOR,
+                  fontFamily: 'Technology',
+                  fontWeight: FontWeight.w700,
                 ),
               ],
             ),

@@ -27,7 +27,7 @@
   "forgiveness": "Forgiveness",
   "tasbeeh": "Glorification",
   "adab": "Etiquette and Conditions",
-  "count_of_prayers": "Prayers Count:",
+  "count_of_prayers": "Prayers Count: ",
   "reset_counter": "Reset Counter",
   "skip": "Skip",
   "start": "Start",
@@ -45,9 +45,6 @@
   "message_01": "You can now use the (Zikr) counter easily and you can change the (Zikr) to another (Zikr), and when the (Zikr) is finished, you can reset the value again",
   "message_02": "You can navigate and choose between many (Zikr)s as needed, there are classifications for all conditions and times of interest to the Muslim person",
   "message_03": "A new feature that every time you exit the application, the application displays a reminder, for example a prayer or a hadith, and so on, and you can turn off this feature from the settings screen in case you do not want it.",
-  "title_01": "Rosary of (Zikr)",
-  "title_02": "(Zikr)s Screen"
-
-
-
+  "title_01": "Rosary",
+  "title_02": "Prayers"
 }
