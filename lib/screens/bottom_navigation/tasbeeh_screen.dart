@@ -14,11 +14,11 @@ class TasbeehScreen extends StatefulWidget {
 
 class _TasbeehScreenState extends State<TasbeehScreen> {
   int _counter = 0;
-  String _alZeker = '';
+  String _alZeker = 'أستغفر الله';
 
   @override
   Widget build(BuildContext context) {
-    _alZeker = AppLocalizations.of(context)!.forgiveness_from_allah;
+    // _alZeker = AppLocalizations.of(context)!.forgiveness_from_allah;
     return Padding(
       padding: EdgeInsetsDirectional.only(
         start: SizeConfig.scaleWidth(15),
