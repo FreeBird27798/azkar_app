@@ -8,11 +8,11 @@ A professional and comprehensive Islamic application built with **Flutter**. Thi
 - **Digital Subhah:** An interactive and simple counter for Tasbih.
 - **Search & Categorization:** Easy navigation through different types of remembrances.
 - **Multilingual Support:** Fully localized using Flutter's Internationalization (i18n).
-- **Reactive UI:** Smooth state management and navigation powered by **GetX**.
+- **Reactive UI:** Smooth state management and navigation powered by **Provider**.
 
 ## 🛠️ Tech Stack
 - **Framework:** Flutter (Dart)
-- **State Management:** GetX
+- **State Management:** Provider
 - **Data Management:** Local Database / Asset-based JSON.
 - **Localization:** Flutter Internationalization
 
